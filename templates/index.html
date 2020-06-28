@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Guess Kaden's Weight!</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Guess Kaden's Weight</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contents">
+        <h1>Guess Kaden's Birth Weight</h1>
+        <h3>Kaden's arrival is right around the corner</h3>
+        <h3>Submit your guess to what his birth weight is</h3>
+        <h3>Winner gets eternal bragging rights!</h3>
+        <h2>Current average weight is:</h2>
+        <!-- <div class="message">
+          {{text | safe}}
+        </div> -->
+        <form method="POST" action="{{url_for('success')}}">
+          <label for="guesser_name">Please provide your name:</label>
+          <input
+            class="input_box"
+            id="guesser_name"
+            type="text"
+            title="guesser_name"
+            name="guesser_name"
+            required
+          />
+          <label for="guesser_guess"
+            >Please provide your guess in pounds:</label
+          >
+          <input
+            class="input_box"
+            id="guesser_guess"
+            type="number"
+            title="guesser_guess"
+            placeholder="Example - 6.7"
+            name="guesser_guess"
+            required
+          />
+          <button type="submit" class="submit_button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
