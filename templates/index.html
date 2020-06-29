@@ -19,12 +19,14 @@
         <h3>Kaden's arrival is right around the corner</h3>
         <h3>Submit your guess to what his birth weight is</h3>
         <h3>Winner gets eternal bragging rights!</h3>
-        <h2>Current average weight is:</h2>
+        <h2>Current average weight guessed is:</h2>
         <!-- <div class="message">
           {{text | safe}}
         </div> -->
         <form method="POST" action="{{url_for('success')}}">
-          <label for="guesser_name">Please provide your name:</label>
+          <label for="guesser_name" class="labels"
+            >Please provide your name:</label
+          >
           <input
             class="input_box"
             id="guesser_name"
@@ -33,7 +35,7 @@
             name="guesser_name"
             required
           />
-          <label for="guesser_guess"
+          <label for="guesser_guess" class="labels"
             >Please provide your guess in pounds:</label
           >
           <input
