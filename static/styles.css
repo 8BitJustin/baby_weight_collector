@@ -40,7 +40,7 @@ h3 {
   height: 50vh;
   border: 2px solid rgba(30, 144, 255, 0.6);
   border-radius: 10px;
-  box-shadow: 0px 10px 10px rgba(30, 144, 255, 0.4);
+  box-shadow: 0px 5px 10px rgba(30, 144, 255, 0.4);
   text-align: center;
   align-items: center; /* new */
   justify-content: center;
@@ -56,8 +56,37 @@ h3 {
 }
 
 .input_box {
+  color: rgba(30, 144, 255, 1);
+  font-size: 1.5em;
   text-align: center;
   display: block;
-  width: 50%;
+  height: 36px;
+  width: 80%;
   margin: 10px auto;
+  border: 1px solid rgba(30, 144, 255, 0.6);
+  border-radius: 8px;
+}
+
+/* Removal of arrow from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.submit_button {
+  color: rgba(30, 144, 255, 1);
+  font-size: 1em;
+  margin-top: 10px;
+  background-color: white;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(30, 144, 255, 0.6);
+  box-shadow: 0px 3px 6px rgba(30, 144, 255, 0.4);
 }
