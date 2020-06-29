@@ -2,12 +2,32 @@ body {
   margin: 0;
   height: 100vh;
   font-family: "Comic Neue", cursive;
+  color: rgba(65, 105, 255, 1);
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
+}
+
+#main_heading {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.heading {
+  width: 100%;
+  display: block;
+}
+
+.desc {
+  font-size: 1.5em;
+}
+
+.show_avg {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -24,8 +44,8 @@ h3 {
   text-align: center;
   align-items: center; /* new */
   justify-content: center;
-  height: 40vh;
-  width: 50vh;
+  height: 60vh;
+  width: 80vh;
   margin: auto;
   padding: 50px;
   flex-wrap: wrap;
