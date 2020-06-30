@@ -1,6 +1,21 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:C0d!ng01' \
+                                      '@localhost/birth_weight'
+db = SQLAlchemy(app)
+
+
+class Data(db.Model):
+    __tablename__ = "data"
+    id = db.Column(db.Integer, primary_key = True)
+    name_ = db.Column(db.String(20), unique = True)
+    guess_ = db.Column(db.Float)
+
+    def __init__(self, name_, guess_):
+        self.name_ = name_
+        self.guess_ = guess_
 
 
 @app.route("/")
