@@ -26,12 +26,13 @@ def index():
 @app.route("/success", methods=['POST'])
 def success():
     if request.method == 'POST':
-        guesser = request.form['name']
+        name = request.form['name']
         guess = request.form['guess']
-        print(guesser, guess)
+        print(name, guess)
+        db.session.add(name, guess)
+        db.session.commit()
         return render_template("success.html")
 
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    app.run(debug=True)
