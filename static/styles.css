@@ -11,6 +11,12 @@ h3 {
   margin: 0;
 }
 
+#kaden {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
+    0 0 9px rgba(65, 105, 255, 1);
+}
+
 #main_heading {
   font-size: 3em;
   margin-bottom: 10px;

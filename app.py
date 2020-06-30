@@ -29,7 +29,8 @@ def success():
         name = request.form['name']
         guess = request.form['guess']
         print(name, guess)
-        db.session.add(name, guess)
+        data = Data(name, guess)
+        db.session.add(data)
         db.session.commit()
         return render_template("success.html")
 
