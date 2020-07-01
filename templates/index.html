@@ -27,10 +27,12 @@
         <h3 class="heading desc">Winner gets eternal bragging rights!</h3>
         <h2 class="heading show_avg">
           Current average weight guessed is:
-          <span class="avg">{{average}}</span>
+          <span class="avg">{{average}}</span> lbs
         </h2>
         <form method="POST" action="{{url_for('success')}}">
-          <label for="name" class="labels">Please provide your name:</label>
+          <label for="name" class="labels"
+            >Please provide your first and last name:</label
+          >
           <div class="message">
             {{text | safe}}
           </div>
@@ -51,7 +53,7 @@
             type="number"
             step="0.1"
             title="guess"
-            placeholder="Example - 6.7"
+            placeholder="Example - 7.5"
             name="guess"
             required
           />

@@ -41,7 +41,8 @@ def success():
             average = round(average, 1)
             print(average)
             return render_template("success.html")
-        return render_template("index.html", text="Please use another name")
+        return render_template("index.html", text="Name already used, please "
+                                                  "use another")
 
 
 if __name__ == "__main__":
