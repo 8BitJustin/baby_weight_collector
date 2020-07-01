@@ -25,7 +25,10 @@
           Submit your guess to what his birth weight is.
         </h3>
         <h3 class="heading desc">Winner gets eternal bragging rights!</h3>
-        <h2 class="heading show_avg">Current average weight guessed is:</h2>
+        <h2 class="heading show_avg">
+          Current average weight guessed is:
+          <span class="avg">{{average}}</span>
+        </h2>
         <form method="POST" action="{{url_for('success')}}">
           <label for="name" class="labels">Please provide your name:</label>
           <div class="message">

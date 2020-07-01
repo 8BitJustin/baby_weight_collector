@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:C0d!ng01' \
@@ -20,7 +21,10 @@ class Data(db.Model):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    average = db.session.query(func.avg(Data.guess_)).scalar()
+    average = round(average, 1)
+    print(average)
+    return render_template("index.html", average=average)
 
 
 @app.route("/success", methods=['POST'])
@@ -33,6 +37,9 @@ def success():
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
+            average = db.session.query(func.avg(Data.guess_)).scalar()
+            average = round(average, 1)
+            print(average)
             return render_template("success.html")
         return render_template("index.html", text="Please use another name")
 
