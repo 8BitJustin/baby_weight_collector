@@ -26,8 +26,13 @@ def avg():
     return average
 
 
+def count():
+    print(db.session.query(func.count(Data.id)).scalar())
+
+
 @app.route("/")
 def index():
+    count()
     avg()
     return render_template("index.html", average=avg())
 
@@ -42,7 +47,9 @@ def success():
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
+            count()
             return render_template("success.html")
+        count()
         avg()
         return render_template("index.html", text="Name already used, please "
                                                   "use another", average=avg())
