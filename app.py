@@ -36,7 +36,7 @@ def count():
 def index():
     count()
     avg()
-    return render_template("index.html", average=avg())
+    return render_template("index.html", average=avg(), count=count())
 
 
 @app.route("/success", methods=['POST'])

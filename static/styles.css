@@ -17,6 +17,12 @@ h3 {
     0 0 9px rgba(65, 105, 255, 1);
 }
 
+.count {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
+    0 0 9px rgba(65, 105, 255, 1);
+}
+
 .avg {
   color: white;
   text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
@@ -44,9 +50,17 @@ h3 {
   font-size: 1.5em;
 }
 
+.show_count {
+  margin-top: 10px;
+}
+
 .show_avg {
-  font-size: 2em;
   margin-bottom: 10px;
+}
+
+.show_avg,
+.show_count {
+  font-size: 2em;
 }
 
 .container {
