@@ -1,3 +1,7 @@
+/********************/
+/* General */
+/********************/
+
 body {
   margin: 0;
   height: 100vh;
@@ -11,57 +15,22 @@ h3 {
   margin: 0;
 }
 
-#kaden {
-  color: white;
-  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
-    0 0 9px rgba(65, 105, 255, 1);
+/* Removal of arrow from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.count {
-  color: white;
-  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
-    0 0 9px rgba(65, 105, 255, 1);
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-.avg {
-  color: white;
-  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
-    0 0 9px rgba(65, 105, 255, 1);
-}
-
-.message {
-  color: white;
-  text-shadow: 0 0 1px rgba(217, 33, 33, 1), 0 0 2px rgba(217, 33, 33, 1),
-    0 0 3px rgba(217, 33, 33, 1), 0 0 3px rgba(217, 33, 33, 1),
-    0 0 3px rgba(217, 33, 33, 1);
-}
-
-#main_heading {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.heading {
-  width: 100%;
-  display: block;
-}
-
-.desc {
-  font-size: 1.5em;
-}
-
-.show_count {
-  margin-top: 10px;
-}
-
-.show_avg {
-  margin-bottom: 10px;
-}
-
-.show_avg,
-.show_count {
-  font-size: 2em;
-}
+/********************/
+/* Index */
+/********************/
 
 .container {
   display: flex;
@@ -84,6 +53,58 @@ h3 {
   flex-wrap: wrap;
 }
 
+.heading {
+  width: 100%;
+  display: block;
+}
+
+#main_heading {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 1.5em;
+}
+
+#kaden {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
+    0 0 9px rgba(65, 105, 255, 1);
+}
+
+.show_count {
+  margin-top: 10px;
+}
+
+.count {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
+    0 0 9px rgba(65, 105, 255, 1);
+}
+
+.show_avg {
+  margin-bottom: 10px;
+}
+
+.avg {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(65, 105, 255, 1),
+    0 0 9px rgba(65, 105, 255, 1);
+}
+
+.show_avg,
+.show_count {
+  font-size: 2em;
+}
+
+.message {
+  color: white;
+  text-shadow: 0 0 1px rgba(217, 33, 33, 1), 0 0 2px rgba(217, 33, 33, 1),
+    0 0 3px rgba(217, 33, 33, 1), 0 0 3px rgba(217, 33, 33, 1),
+    0 0 3px rgba(217, 33, 33, 1);
+}
+
 .labels {
   width: 100%;
 }
@@ -100,19 +121,6 @@ h3 {
   border-radius: 8px;
 }
 
-/* Removal of arrow from number input */
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 .submit_button {
   color: rgba(30, 144, 255, 1);
   font-size: 1em;
@@ -124,7 +132,9 @@ input[type="number"] {
   box-shadow: 0px 3px 6px rgba(30, 144, 255, 0.4);
 }
 
-/* Success Page */
+/********************/
+/* Success */
+/********************/
 
 .success_container {
   display: flex;
