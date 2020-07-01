@@ -29,10 +29,12 @@ def success():
         name = request.form['name']
         guess = request.form['guess']
         print(name, guess)
-        data = Data(name, guess)
-        db.session.add(data)
-        db.session.commit()
-        return render_template("success.html")
+        if db.session.query(Data).filter(Data.name_ == name).count() == 0:
+            data = Data(name, guess)
+            db.session.add(data)
+            db.session.commit()
+            return render_template("success.html")
+        return render_template("index.html", text="Please use another name")
 
 
 if __name__ == "__main__":
