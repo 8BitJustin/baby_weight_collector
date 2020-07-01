@@ -22,13 +22,11 @@ class Data(db.Model):
 def avg():
     average = db.session.query(func.avg(Data.guess_)).scalar()
     average = round(average, 1)
-    print(average)
     return average
 
 
 def count():
     user_count = db.session.query(func.count(Data.id)).scalar()
-    print(user_count)
     return user_count
 
 
