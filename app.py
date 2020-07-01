@@ -27,7 +27,9 @@ def avg():
 
 
 def count():
-    print(db.session.query(func.count(Data.id)).scalar())
+    user_count = db.session.query(func.count(Data.id)).scalar()
+    print(user_count)
+    return user_count
 
 
 @app.route("/")
@@ -47,7 +49,6 @@ def success():
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
-            count()
             return render_template("success.html")
         count()
         avg()
