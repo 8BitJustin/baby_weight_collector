@@ -42,9 +42,11 @@ def success():
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
+            avg()
             return render_template("success.html")
+        avg()
         return render_template("index.html", text="Name already used, please "
-                                                  "use another")
+                                                  "use another", average=avg())
 
 
 if __name__ == "__main__":
