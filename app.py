@@ -19,12 +19,17 @@ class Data(db.Model):
         self.guess_ = guess_
 
 
-@app.route("/")
-def index():
+def avg():
     average = db.session.query(func.avg(Data.guess_)).scalar()
     average = round(average, 1)
     print(average)
-    return render_template("index.html", average=average)
+    return average
+
+
+@app.route("/")
+def index():
+    avg()
+    return render_template("index.html", average=avg())
 
 
 @app.route("/success", methods=['POST'])
@@ -37,9 +42,6 @@ def success():
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
-            average = db.session.query(func.avg(Data.guess_)).scalar()
-            average = round(average, 1)
-            print(average)
             return render_template("success.html")
         return render_template("index.html", text="Name already used, please "
                                                   "use another")
