@@ -48,9 +48,13 @@ def index():
     :return: The index.html file, and both the average and count to display
     within the index.html file
     """
-    count()
-    avg()
-    return render_template("index.html", average=avg(), count=count())
+    user_count = db.session.query(func.count(Data.id)).scalar()
+    if user_count == 0:
+        return render_template("index.html", average=0, count=0)
+    else:
+        count()
+        avg()
+        return render_template("index.html", average=avg(), count=count())
 
 
 @app.route("/success", methods=['POST'])
@@ -65,6 +69,7 @@ def success():
     if request.method == 'POST':
         name = request.form['name']
         guess = request.form['guess']
+        user_count = db.session.query(func.count(Data.id)).scalar()
 
         if db.session.query(Data).filter(Data.name_ == name).count() == 1:
             return render_template("index.html",
@@ -77,14 +82,18 @@ def success():
                                         "use another", average=avg(),
                                    count=count())
         else:
-            count()
-            avg()
-            data = Data(name, guess)
-            db.session.add(data)
-            db.session.commit()
-            return render_template("success.html")
-
-
+            if user_count == 0:
+                data = Data(name, guess)
+                db.session.add(data)
+                db.session.commit()
+                return render_template("success.html")
+            else:
+                count()
+                avg()
+                data = Data(name, guess)
+                db.session.add(data)
+                db.session.commit()
+                return render_template("success.html")
 
 
 if __name__ == "__main__":
