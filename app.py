@@ -98,7 +98,10 @@ def success():
 
 @app.route("/guesses", methods=['GET'])
 def guesses():
-    return render_template("guesses.html")
+    rows = db.session.query(Data)
+    return render_template('guesses.html',
+                           title='Overview',
+                           rows=rows)
 
 
 if __name__ == "__main__":

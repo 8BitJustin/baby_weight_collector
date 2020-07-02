@@ -16,11 +16,20 @@
   <body>
     <div class="success_container">
       <div class="success_contents">
-        <h1>
-          Guesses displayed here!
-        </h1>
+        <div class="guesses_table">
+          <table cellspacing="0">
+            <thead>
+              {% for row in rows %}
+              <tr class="table_row">
+                <td class="table_name">{{ row.name_ }}</td>
+                <td class="table_guess">{{ row.guess_ }}</td>
+              </tr>
+              {% endfor %}
+            </thead>
+          </table>
+        </div>
         <form method="get" action="{{url_for('index')}}">
-          <input type="submit" value="Back" class="submit_button" />
+          <input type="submit" value="Back" class="back_button" />
         </form>
       </div>
     </div>

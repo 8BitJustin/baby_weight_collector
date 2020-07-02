@@ -28,6 +28,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+form {
+  width: 100%;
+}
+
 /********************/
 /* Index */
 /********************/
@@ -46,7 +50,7 @@ input[type="number"] {
   text-align: center;
   align-items: center; /* new */
   justify-content: center;
-  height: 60vh;
+  height: 80vh;
   width: 80vh;
   margin: auto;
   padding: 50px;
@@ -121,7 +125,7 @@ input[type="number"] {
   text-align: center;
   display: block;
   height: 36px;
-  width: 80%;
+  width: 50%;
   margin: 10px auto;
   border: 1px solid rgba(30, 144, 255, 0.6);
   border-radius: 8px;
@@ -133,6 +137,18 @@ input[type="number"] {
   margin-top: 10px;
   background-color: white;
   height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(30, 144, 255, 0.6);
+  box-shadow: 0px 3px 6px rgba(30, 144, 255, 0.4);
+}
+
+.guesses_button {
+  color: rgba(30, 144, 255, 1);
+  font-size: 1.125em;
+  margin-top: 10px;
+  padding: 0 20px;
+  background-color: white;
+  height: 40px;
   border-radius: 8px;
   border: 1px solid rgba(30, 144, 255, 0.6);
   box-shadow: 0px 3px 6px rgba(30, 144, 255, 0.4);
@@ -159,4 +175,46 @@ input[type="number"] {
 
 .success_contents h1 {
   margin: 20px auto;
+}
+
+/********************/
+/* Guesses */
+/********************/
+
+table {
+  border-collapse: collapse;
+}
+
+.guesses_table {
+  margin-bottom: 30px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid rgba(65, 105, 255, 1);
+  border-top: 1px solid rgba(65, 105, 255, 1);
+}
+
+tr:first-child {
+  border-top: 0;
+}
+
+.table_name {
+  border-right: 1px solid rgba(65, 105, 255, 1);
+}
+
+.back_button {
+  color: rgba(30, 144, 255, 1);
+  font-size: 1em;
+  margin-top: 10px;
+  background-color: white;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(30, 144, 255, 0.6);
+  box-shadow: 0px 3px 6px rgba(30, 144, 255, 0.4);
 }
