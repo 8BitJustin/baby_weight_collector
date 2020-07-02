@@ -7,11 +7,9 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
 #                                         '@localhost/birth_weight'
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'postgresql://qfsgkuejarvxcl:48ac3004' \
-                                        'ed67dc4e4489ec967080796b71770e10d4' \
-                                        '3cf15d301be607e52a70a2@ec2-34-192-' \
-                                        '173-173.compute-1.amazonaws.com:54' \
-                                        '32/d3tg19asnss5rj'
+    'postgres://ifoemhpwhwdfeq:ddf3a55c5523c6e32cbd1f7c9255573a043317cf321a' \
+    'd18d2221ca2e4f5ef487@ec2-34-206-31-217.compute-1.amazonaws.com:5432/d4' \
+    '9ubohr81ma7k'
 db = SQLAlchemy(app)
 
 
