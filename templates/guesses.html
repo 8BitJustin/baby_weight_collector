@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="../static/styles.css" />
+    <!-- Font Link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Guess Kaden's Weight</title>
+  </head>
+  <body>
+    <div class="success_container">
+      <div class="success_contents">
+        <h1>
+          Guesses displayed here!
+        </h1>
+        <form method="get" action="{{url_for('index')}}">
+          <input type="submit" value="Back" class="submit_button" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

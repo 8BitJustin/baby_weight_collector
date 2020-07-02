@@ -96,5 +96,10 @@ def success():
                 return render_template("success.html")
 
 
+@app.route("/guesses", methods=['GET'])
+def guesses():
+    return render_template("guesses.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

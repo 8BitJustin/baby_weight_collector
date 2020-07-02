@@ -31,9 +31,9 @@
         <h3 class="heading desc">
           Closest guess without going over receives:
         </h3>
-        <h3
-                class="heading desc"><span class="prize">Eternal bragging
-          rights!</span></h3>
+        <h3 class="heading desc">
+          <span class="prize">Eternal bragging rights!</span>
+        </h3>
         <h2 class="heading show_count">
           Total quesses so far:
           <!-- Count class is fed in from database, indicates the number of guesses so far -->
@@ -74,6 +74,9 @@
             required
           />
           <button type="submit" class="submit_button">Submit</button>
+        </form>
+        <form method="get" action="{{url_for('guesses')}}">
+          <input type="submit" value="Guesses" class="submit_button" />
         </form>
       </div>
     </div>
