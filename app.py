@@ -3,8 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
-                                        '@localhost/birth_weight'
+# Config login for local database
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
+#                                         '@localhost/birth_weight'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qfsgkuejarvxcl:48ac3004' \
+                                        'ed67dc4e4489ec967080796b71770e10d4' \
+                                        '3cf15d301be607e52a70a2@ec2-34-192-' \
+                                        '173-173.compute-1.amazonaws.com:54' \
+                                        '32/d3tg19asnss5rj?sslmode=require'
 db = SQLAlchemy(app)
 
 
