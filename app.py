@@ -102,7 +102,7 @@ def guesses():
     if rows.count() == 0:
         return render_template('guesses.html')
     else:
-        return render_template('guesses.html', title='Overview', rows=rows)
+        return render_template('guesses.html', rows=rows)
 
 
 if __name__ == "__main__":
