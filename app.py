@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:C0d!ng01' \
-                                      '@localhost/birth_weight'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
+                                        '@localhost/birth_weight'
 db = SQLAlchemy(app)
 
 
@@ -13,8 +13,8 @@ class Data(db.Model):
     Data model which creates table within database
     """
     __tablename__ = "data"
-    id = db.Column(db.Integer, primary_key = True)
-    name_ = db.Column(db.String(20), unique = True)
+    id = db.Column(db.Integer, primary_key=True)
+    name_ = db.Column(db.String(20), unique=True)
     guess_ = db.Column(db.Float)
 
     def __init__(self, name_, guess_):
@@ -65,16 +65,26 @@ def success():
     if request.method == 'POST':
         name = request.form['name']
         guess = request.form['guess']
-        print(name, guess)
-        if db.session.query(Data).filter(Data.name_ == name).count() == 0:
+
+        if db.session.query(Data).filter(Data.name_ == name).count() == 1:
+            return render_template("index.html",
+                                   text="Name already used, please "
+                                        "use another", average=avg(),
+                                   count=count())
+        elif db.session.query(Data).filter(Data.guess_ == guess).count() == 1:
+            return render_template("index.html",
+                                   text="Guess already used, please "
+                                        "use another", average=avg(),
+                                   count=count())
+        else:
+            count()
+            avg()
             data = Data(name, guess)
             db.session.add(data)
             db.session.commit()
             return render_template("success.html")
-        count()
-        avg()
-        return render_template("index.html", text="Name already used, please "
-                                                  "use another", average=avg())
+
+
 
 
 if __name__ == "__main__":
