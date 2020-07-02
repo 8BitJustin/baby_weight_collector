@@ -73,6 +73,12 @@ input[type="number"] {
     0 0 9px rgba(65, 105, 255, 1);
 }
 
+.prize {
+  color: white;
+  text-shadow: 0 0 5px rgba(65, 105, 255, 1), 0 0 7px rgba(188, 105, 255, 1),
+    0 0 9px rgba(200, 56, 78, 1);
+}
+
 .show_count {
   margin-top: 10px;
 }
