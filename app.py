@@ -4,8 +4,11 @@ from sqlalchemy.sql import func
 
 app = Flask(__name__)
 # Config login for local database
+# Use for TESTING ***
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
+#
 #                                         '@localhost/birth_weight'
+# Use for PRODUCTION ***
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     'postgres://ifoemhpwhwdfeq:ddf3a55c5523c6e32cbd1f7c9255573a043317cf321a' \
     'd18d2221ca2e4f5ef487@ec2-34-206-31-217.compute-1.amazonaws.com:5432/d4' \
