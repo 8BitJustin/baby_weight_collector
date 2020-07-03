@@ -226,6 +226,8 @@ tr:first-child {
   .contents {
     height: 60vh;
     width: 50vh;
+    border: 0;
+    box-shadow: 0;
   }
 
   #main_heading {
