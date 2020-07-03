@@ -227,7 +227,7 @@ tr:first-child {
     height: 60vh;
     width: 50vh;
     border: 0;
-    box-shadow: 0;
+    box-shadow: none;
   }
 
   #main_heading {
