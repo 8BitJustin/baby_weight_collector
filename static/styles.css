@@ -167,7 +167,7 @@ form {
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center;   -Removed due to pushing all content up and down and not displaying all*/
   flex-direction: column;
   height: 100vh;
   margin: auto;
