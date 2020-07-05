@@ -8,6 +8,30 @@ It's rather simple, well, the concept at least. User accesses the link to the [s
 
 The user inputs their first/last name, and what they belive the baby's weight to be. Once they click submit, this information is sent to the database created with SQLAlchemy and stored. They are then presented with a Thank You screen, which goes back to the initial screen after a few seconds.
 
+### Installing
+
+To use the baby weight collector, follow the simple steps below (build using Python3).
+
+Download the zip or clone the repo.
+
+```
+git clone https://github.com/8BitJustin/baby_weight_collector.git
+```
+
+Open the directuory using any terminal (Powershell, CMD, Terminal, etc.), or you can use the terminal within Pycharm.
+
+While in the directory with the app.py file present, use the following command:
+
+```
+python app.py
+```
+
+Once running, go to the localhost link below to view:
+
+```
+http://localhost:5000/
+```
+
 ### Details
 
 A step by step series of steps to detail how the app works.
