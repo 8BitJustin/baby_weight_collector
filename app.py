@@ -1,18 +1,20 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
+from win10toast import ToastNotifier
 
 app = Flask(__name__)
 # Config login for local database
-# Use for TESTING ***
+# *** Use for TESTING ***
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C0d!ng01' \
-#
 #                                         '@localhost/birth_weight'
-# Use for PRODUCTION ***
+
+# *** Use for PRODUCTION ***
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     'postgres://ifoemhpwhwdfeq:ddf3a55c5523c6e32cbd1f7c9255573a043317cf321a' \
     'd18d2221ca2e4f5ef487@ec2-34-206-31-217.compute-1.amazonaws.com:5432/d4' \
     '9ubohr81ma7k'
+
 db = SQLAlchemy(app)
 
 
@@ -49,6 +51,20 @@ def count():
     return user_count
 
 
+# def toast():
+#     """
+#     Provides windows notification
+#     :return: Toaster popup notification
+#     """
+#     toaster = ToastNotifier()
+#     toasted = toaster.show_toast("Guess Kaden's Weight",
+#                                  "Another guess has been made!",
+#                                  icon_path=None,
+#                                  duration=5,
+#                                  threaded=True)
+#     return toasted
+
+
 @app.route("/")
 def index():
     """
@@ -74,6 +90,7 @@ def success():
     :return: Either the success.html (if name/guess aren't already in the
     db, or the index.html will refresh with an error message
     """
+
     if request.method == 'POST':
         name = request.form['name']
         guess = request.form['guess']
@@ -101,6 +118,7 @@ def success():
                 data = Data(name, guess)
                 db.session.add(data)
                 db.session.commit()
+                # toast()
                 return render_template("success.html")
 
 
